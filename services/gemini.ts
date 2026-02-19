@@ -3,8 +3,11 @@ import { GoogleGenAI, Type, Modality } from "@google/genai";
 import { Department } from "../types";
 import { getContextForDepartment } from "./database";
 
-// Lê a chave pelo define customizado no Vite (process.env.API_KEY) ou meta.env caso alterado no futuro
-const ai = new GoogleGenAI({ apiKey: (process as any)?.env?.API_KEY || (import.meta as any).env?.VITE_API_KEY || '' });
+// Lê a chave da seguinte forma: 
+// 1. Tenta pegar do import.meta.env (Padrão do Vite no browser)
+// 2. Se não disponível e estiver no Node/Electron (onde process existe), pega do process.env
+const apiKey = (import.meta as any).env?.VITE_API_KEY || (typeof process !== 'undefined' ? (process as any).env?.API_KEY : '');
+const ai = new GoogleGenAI({ apiKey: apiKey });
 
 export const generateBotResponse = async (
   userMessage: string,
