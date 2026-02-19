@@ -1,0 +1,11 @@
+
+{
+  "appId": "com.colegioflama.atendimento",
+  "appName": "Atendimento Flama",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "url": "https://atendimento-colegio-flama.web.app",
+    "cleartext": true
+  }
+}

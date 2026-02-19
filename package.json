@@ -1,0 +1,68 @@
+{
+  "name": "central-atendimento-flama",
+  "version": "1.8.0",
+  "description": "Central de Atendimento Inteligente - Colégio Flama",
+  "main": "electron-main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "electron:dev": "electron .",
+    "electron:dev:win": "set NODE_ENV=development && electron .",
+    "electron:build": "npm run build && electron-builder"
+  },
+  "author": "Colégio Flama",
+  "license": "MIT",
+  "dependencies": {
+    "@google/genai": "^1.41.0",
+    "@supabase/supabase-js": "^2.97.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "electron": "^28.2.0",
+    "electron-builder": "^24.9.1",
+    "typescript": "^5.3.0",
+    "vite": "^5.2.0"
+  },
+  "build": {
+    "appId": "com.colegioflama.atendimento",
+    "productName": "Atendimento Flama",
+    "copyright": "Copyright © 2024 Colégio Flama",
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "public/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "shortcutName": "Atendimento Flama",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "installerIcon": "public/icon.ico",
+      "uninstallerIcon": "public/icon.ico",
+      "artifactName": "Instalador_Flama_v${version}.exe"
+    },
+    "files": [
+      "dist/**/*",
+      "electron-main.js",
+      "preload.js",
+      "public/**/*"
+    ],
+    "publish": null
+  }
+}

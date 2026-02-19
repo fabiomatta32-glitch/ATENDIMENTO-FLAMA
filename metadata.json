@@ -1,0 +1,7 @@
+{
+  "name": "Central de Atendimento Colégio Flama",
+  "description": "Sistema de atendimento escolar inteligente do Colégio Flama com suporte a chatbot e transição para atendimento humano.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

@@ -1,0 +1,25 @@
+
+{
+  "name": "Central de Atendimento Colégio Flama",
+  "short_name": "Flama App",
+  "description": "Sistema de atendimento escolar do Colégio Flama",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#075e54",
+  "icons": [
+    {
+      "src": "https://ui-avatars.com/api/?name=Flama&background=075e54&color=fff&size=192",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://ui-avatars.com/api/?name=Flama&background=075e54&color=fff&size=512",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

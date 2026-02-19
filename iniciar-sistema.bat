@@ -1,0 +1,9 @@
+@echo off
+echo Iniciando Servidor Vite...
+start "Vite Server" npm.cmd run dev
+
+echo Aguardando o servidor iniciar (5 segundos)...
+timeout /t 5
+
+echo Iniciando Electron...
+start "Electron App" npm.cmd run electron:dev
