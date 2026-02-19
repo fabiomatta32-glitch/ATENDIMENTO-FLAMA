@@ -3,7 +3,8 @@ import { GoogleGenAI, Type, Modality } from "@google/genai";
 import { Department } from "../types";
 import { getContextForDepartment } from "./database";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+// Lê a chave pelo define customizado no Vite (process.env.API_KEY) ou meta.env caso alterado no futuro
+const ai = new GoogleGenAI({ apiKey: (process as any)?.env?.API_KEY || (import.meta as any).env?.VITE_API_KEY || '' });
 
 export const generateBotResponse = async (
   userMessage: string,
